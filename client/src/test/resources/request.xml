@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="iac.spb/calc/schema">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:calcRequest>
+            <gs:variables>
+            <gs:a>0</gs:a>
+            <gs:b>0</gs:b>
+            <gs:c>0</gs:c>
+            </gs:variables>
+        </gs:calcRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,3 @@
+rootProject.name = "SOAP-calc-system"
+include 'service', 'service'
+include 'client', 'client'

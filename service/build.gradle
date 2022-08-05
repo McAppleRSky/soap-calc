@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.2'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+//    id "jacoco"
+}
+
+description = "Calc service"
+group 'spb.iac'
+version '0.0.1-SNAPSHOT'
+
+compileJava   {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+test {
+    // never UP-TO-DATE
+//  systemProperty "random.testing.seed", new Random().nextInt()
+    useJUnitPlatform()
+//    finalizedBy jacocoTestReport
+}
+
+repositories {
+    mavenCentral()
+}
+
+/*jacocoTestReport {
+    dependsOn test
+}*/
+
+ext {
+//    lombok_version = '1.18.24'
+//    lang3_version = "3.12.0"
+//    mockito_version = "4.6.1"
+//    jupiter_version = "5.9.0"
+}
+
+dependencies {
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+    testImplementation  'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly     'org.junit.jupiter:junit-jupiter-engine'
+//    testImplementation "org.mockito:mockito-core"
+     testImplementation('org.springframework.boot:spring-boot-starter-test') {
+         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+     }
+    compileOnly         'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+//    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'wsdl4j:wsdl4j'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+    implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.1'
+}
+
+sourceSets {
+    main {
+        resources {
+            exclude '**/*.zip'
+        }
+    }
+}
+
+/*springBoot {
+  executable = true
+}*/

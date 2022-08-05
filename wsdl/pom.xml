@@ -1,0 +1,29 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>spb.iac</groupId>
+  <artifactId>wsdl</artifactId>
+  <version>0.001</version>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>jaxb2-maven-plugin</artifactId>
+          <version>1.6</version>
+          <executions>
+            <execution>
+              <id>xjc</id>
+              <goals>
+                <goal>xjc</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <schemaDirectory>${project.basedir}</schemaDirectory>
+            <outputDirectory>${project.basedir}</outputDirectory>
+            <clearOutputDir>false</clearOutputDir>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+</project>

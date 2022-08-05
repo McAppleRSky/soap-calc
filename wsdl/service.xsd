@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="iac.spb/calc/schema"
+           targetNamespace="iac.spb/calc/schema" elementFormDefault="qualified">
+
+    <xs:element name="calcRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="variables" type="tns:variables"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="variables">
+        <xs:sequence>
+            <xs:element name="a" type="xs:int"/>
+            <xs:element name="b" type="xs:int"/>
+            <xs:element name="c" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="calcResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="result">
+        <xs:sequence>
+            <xs:element name="formula" type="xs:string"/>
+            <xs:element name="d" type="xs:int"/>
+            <xs:element name="x1" type="xs:int"/>
+            <xs:element name="x2" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

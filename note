@@ -1,0 +1,19 @@
+For prepare wsdl schema need exec: mvn compile
+ from ./wsdl
+After this copy ./wsdl/spb to ./service/src/main/java
+
+For running service and client need exec spring boot applications:
+1) service/src/main/java/spb/iac/calc/service/ServiceAplication.java
+2) client/src/main/java/spb/iac/calc/client/ClientAplication.java
+from ide (or compile jars with executable = true property)
+
+Service start on default port 8080
+Client start on port 8081 of tomcat
+
+For download wsdl send GET http://localhost:8080/ws/service.wsdl
+
+If send GET http://localhost:port/api/calc/?a=3&b=4&c=1
+ when client send SOAP request to service. Service return SOAP request to client.
+ client return json result.
+
+Math operation not implemented
